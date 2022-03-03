@@ -6,6 +6,7 @@ import '../css/app.css'
 import { InertiaProgress } from '@inertiajs/progress'
 import { Inertia } from '@inertiajs/inertia'
 import nProgress from 'nprogress'
+import { ChakraProvider } from '@chakra-ui/react'
 
 InertiaProgress.init({
   // The delay after which the progress bar will
@@ -13,13 +14,14 @@ InertiaProgress.init({
   // delay: 1000,
 
   // The color of the progress bar.
-  color: 'yellow',
+  color: '#F54135',
 
   // Whether to include the default NProgress styles.
   includeCSS: true,
 
   // Whether the NProgress spinner will be shown.
-  showSpinner: true,
+  // showSpinner: true,
+  height: '5px'
 })
 
 
@@ -30,6 +32,11 @@ Inertia.on('finish', () => nProgress.done())
 createInertiaApp({
   resolve: name => require(`./Pages/${name}`),
   setup({ el, App, props }) {
-    render(<App {...props} />, el)
+    render(
+      <ChakraProvider>
+        <App {...props} />
+      </ChakraProvider>
+
+      , el)
   },
 })

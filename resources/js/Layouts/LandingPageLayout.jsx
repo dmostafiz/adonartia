@@ -15,7 +15,7 @@ export default function LandingPageLayout({ title, children }) {
             </Head>
             <div>
                 <Navigation />
-                <div className='pt-5'>
+                <div>
                     {children}
                 </div>
             </div>

@@ -21,6 +21,13 @@ export default Env.rules({
 	APP_NAME: Env.schema.string(),
 	CACHE_VIEWS: Env.schema.boolean(),
 	SESSION_DRIVER: Env.schema.string(),
-  DRIVE_DISK: Env.schema.enum(['local'] as const),
+	DRIVE_DISK: Env.schema.enum(['local'] as const),
 	NODE_ENV: Env.schema.enum(['development', 'production', 'testing'] as const),
+
+	CLOUDINARY_CLOUD_NAME: Env.schema.string(),
+	CLOUDINARY_API_KEY: Env.schema.string(),
+	CLOUDINARY_API_SECRET: Env.schema.string(),
+	CLOUDINARY_URL: Env.schema.string(),
+	CLOUDINARY_SECURE: Env.schema.boolean()
+
 })
